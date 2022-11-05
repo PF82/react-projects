@@ -1,25 +1,30 @@
 import React, { useState, useEffect } from 'react'
 import { FaAngleDoubleRight } from 'react-icons/fa'
 
+// API
 const url = 'https://course-api.com/react-tabs-project'
 
 function App() {
+  // set up state values
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [value, setValue] = useState(0); // first item of array
 
+  // fetch data from API
   const fetchJobs = async () => {
     const response = await fetch(url);
     const newJobs = await response.json();
-    setJobs(newJobs);
-    setLoading(false);
+    setJobs(newJobs); // setJobs equal to newJobs
+    setLoading(false); // setLoading to be false
   };
 
-  // when we would want the above function to run
+  // when we would want the fetchJobs function to run
   useEffect(() => {
     fetchJobs() // invoke the function
   }, []); // run the app render just once
 
+
+  // if loading display h1
   if (loading) {
     return (
       <section className='section loading'>
@@ -29,8 +34,10 @@ function App() {
   }
 
   // destructuring to be done only right after the loading
+  // jobs are no longer an emptry array since we fetched the jobs
   const { company, dates, duties, title } = jobs[value];
 
+  // otherwise display section
   return (
     <section className='section'>
       <div className='title'>
@@ -59,7 +66,7 @@ function App() {
           <h4>{company}</h4>
           <p className='job-date'>{dates}</p>
 
-          {/* iterate over our duties cause they are an array */}
+          {/* iterate over our duties cause it is an array in API */}
           {duties.map((duty, index) => {
             return (
               <div key={index} className='job-desc'>
