@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { FaBars } from 'react-icons/fa'
-import { AppContext, useGlobalContext } from './context'
+import { useGlobalContext } from './context'
 
 const Home = () => {
   // const data = useContext(AppContext);
   // console.log(data);
 
-  const { openSidebar, openModal } = useGlobalContext()
+  const { openSidebar, openModal } = useGlobalContext();
 
   return (
     <main>
@@ -17,7 +17,7 @@ const Home = () => {
         show modal
       </button>
     </main>
-  )
-}
+  );
+};
 
 export default Home

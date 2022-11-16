@@ -9,37 +9,38 @@ const AppProvider = ({ children }) => {
 
     // set up functions to close and open the sidebar and modal
     const openSidebar = () => {
-        setIsSidebarOpen(true)
-    }
+        setIsSidebarOpen(true);
+    };
     const closeSidebar = () => {
-        setIsSidebarOpen(false)
-    }
+        setIsSidebarOpen(false);
+    };
     const openModal = () => {
-        setIsModalOpen(true)
-    }
+        setIsModalOpen(true);
+    };
     const closeModal = () => {
-        setIsModalOpen(false)
-    }
+        setIsModalOpen(false);
+    };
 
     return (
         <AppContext.Provider
             // pass in object with functions to value
             value={{
-                isModalOpen,
                 isSidebarOpen,
+                isModalOpen,
                 openModal,
-                openSidebar,
                 closeModal,
+                openSidebar,
                 closeSidebar,
-            }}>
+            }}
+        >
             {children}
         </AppContext.Provider>
-    )
-}
+    );
+};
 
 // custom hook
 export const useGlobalContext = () => {
-    return useContext(AppContext)
-}
+    return useContext(AppContext);
+};
 
-export { AppContext, AppProvider }
+export { AppContext, AppProvider };
