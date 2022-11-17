@@ -7,13 +7,17 @@ import {
   FaPhone,
   FaLock,
 } from 'react-icons/fa'
+
 const url = 'https://randomuser.me/api/'
+
 const defaultImage = 'https://randomuser.me/api/portraits/men/75.jpg'
+
 function App() {
   const [loading, setLoading] = useState(true)
   const [person, setPerson] = useState(null)
   const [value, setValue] = useState('random person')
   const [title, setTitle] = useState('name')
+
   const getPerson = async () => {
     setLoading(true)
     const response = await fetch(url)
@@ -48,6 +52,7 @@ function App() {
   useEffect(() => {
     getPerson()
   }, [])
+
   const handleValue = (e) => {
     if (e.target.classList.contains('icon')) {
       const newValue = e.target.dataset.label
@@ -55,6 +60,7 @@ function App() {
       setValue(person[newValue])
     }
   }
+  
   return (
     <main>
       <div className='block bcg-black'></div>
