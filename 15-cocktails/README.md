@@ -10,7 +10,6 @@
 npm install react-router-dom@6
 ```
 
-
 ⭐️ Exercise Contents ⭐️
 15-Cocktails Intro
 15-Cocktails Additional Info
