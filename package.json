@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.6.0",
+    "react-responsive-masonry": "^2.1.6"
   },
   "devDependencies": {
     "react-router-dom": "^6.4.3"
   }
 }
-
